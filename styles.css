@@ -641,6 +641,11 @@ img {
     border: 2px solid var(--accent);
 }
 
+.service-card.featured .service-icon {
+    background-color: var(--accent);
+    color: #fff;
+}
+
 .featured-badge {
     align-self: flex-start;
     background-color: var(--accent);
