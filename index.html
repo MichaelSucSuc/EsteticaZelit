@@ -1,210 +1,300 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZELIT - Centro de Estética y Academia</title>
-    <style>
-        /* Estilos Generales */
-        :root {
-            --color-principal: #d4a373; /* Dorado/Arena elegante */
-            --color-oscuro: #1a1a1a;
-            --color-claro: #fefae0;
-            --color-gris: #faedcd;
-            --texto-oscuro: #333333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            color: var(--texto-oscuro);
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* Hero Section (Inicio) */
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        header p {
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .btn-cta {
-            background-color: var(--color-principal);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: background 0.3s ease;
-        }
-
-        .btn-cta:hover {
-            background-color: #ccd5ae;
-            color: var(--color-oscuro);
-        }
-
-        /* Contenedor Principal */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* Sección Nosotros y Servicios */
-        .grid-servicios {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background: #fdfaf6;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--color-principal);
-            text-align: center;
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--color-oscuro);
-        }
-
-        /* Sección Información (Horario y Contacto) */
-        .info-section {
-            background-color: #faf7f2;
-            padding: 60px 20px;
-        }
-
-        .info-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-
-        .info-box h2 {
-            color: var(--color-oscuro);
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .info-box h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: var(--color-principal);
-            margin-top: 5px;
-        }
-
-        .info-box p {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--color-oscuro);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            header p { font-size: 1.2rem; }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ZELIT - Centro de estética en Arequipa. Tratamientos de belleza, cuidado personal, formación y certificación profesional." />
+    <title>ZELIT - Centro de estética</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <div class="page-shell">
+        <header class="site-header" id="siteHeader">
+            <div class="container nav-bar">
+                <a class="brand" href="#hero" aria-label="ZELIT inicio">
+                    <span class="brand-mark">Z</span>
+                    <span class="brand-text">
+                        <strong>ZELIT</strong>
+                        <small>Centro de estética</small>
+                    </span>
+                </a>
 
-    <header>
-        <h1>ZELIT</h1>
-        <p>Centro de Estética & Academia</p>
-        <a href="https://wa.me/51929503883?text=Hola,%20deseo%20más%20información" class="btn-cta" target="_blank">Reserva tu Cita / Matrícula</a>
-    </header>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
 
-    <main class="container">
-        <section style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Tu belleza y tu futuro profesional en un solo lugar</h2>
-            <p style="font-size: 1.2rem; color: #555;">
-                En <strong>ZELIT</strong> brindamos los mejores tratamientos de belleza y cuidado personal para resaltar tu brillo natural. Además, somos un centro educativo donde capacitamos y certificamos a nuevos talentos del mundo de la estética y a profesionales que buscan actualizarse con las últimas tendencias.
-            </p>
-        </section>
-
-        <section class="grid-servicios">
-            <div class="card">
-                <h3>Tratamientos de Estética</h3>
-                <p>Cuidado personal y tratamientos de belleza personalizados con los estándares más altos de calidad para consentirte como te mereces.</p>
+                <nav class="nav-links" id="navLinks">
+                    <a href="#hero">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#formacion">Formación</a>
+                    <a href="#galeria">Galería</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="https://wa.me/51929503883" target="_blank" rel="noreferrer" class="nav-cta">Reservar cita</a>
+                </nav>
             </div>
-            <div class="card">
-                <h3>Educación y Talleres</h3>
-                <p>¿Quieres incursionar en el mundo de la belleza? Te enseñamos desde cero con metodologías prácticas y dinámicas.</p>
-            </div>
-            <div class="card">
-                <h3>Certificación Profesional</h3>
-                <p>Actualizaciones y certificaciones para profesionales del rubro que desean elevar su nivel y destacar en el mercado actual.</p>
-            </div>
-        </section>
-    </main>
+        </header>
 
-    <section class="info-section">
-        <div class="info-grid">
-            <div class="info-box">
-                <h2>Horario de Atención</h2>
-                <p><strong>Lunes a Sábado:</strong> 9:00 am a 7:00 pm</p>
-                <p><strong>Domingo:</strong> Cerrado</p>
+        <main>
+            <section class="hero section-padding" id="hero">
+                <div class="container hero-grid">
+                    <div class="hero-copy reveal">
+                        <p class="eyebrow">Belleza, cuidado personal y formación profesional</p>
+                        <h1>Una experiencia estética pensada para verte y sentirte mejor.</h1>
+                        <p class="lead">
+                            Prestación de tratamientos de belleza y cuidado personal, además de educación y certificación para personas que desean incursionar en el mundo de la belleza o profesionales que buscan actualizarse.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="https://wa.me/51929503883" target="_blank" rel="noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Agenda por WhatsApp
+                            </a>
+                            <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
+                        </div>
+
+                        <div class="hero-metrics">
+                            <article>
+                                <strong>+1</strong>
+                                <span>Centro integral</span>
+                            </article>
+                            <article>
+                                <strong>6 días</strong>
+                                <span>Atención semanal</span>
+                            </article>
+                            <article>
+                                <strong>Formación</strong>
+                                <span>Certificación y talleres</span>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="hero-media reveal delay-1">
+                        <div class="media-frame large">
+                            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=80" alt="Ambiente del centro ZELIT" />
+                        </div>
+                        <div class="media-stack">
+                            <div class="media-frame small">
+                                <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=80" alt="Tratamiento de belleza ZELIT" />
+                            </div>
+                            <div class="media-frame small accent-card">
+                                <span class="accent-label">Horario</span>
+                                <strong>Lunes a sábado</strong>
+                                <span>9:00 am a 7:00 pm</span>
+                                <small>Domingo cerrado</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding intro-band">
+                <div class="container intro-grid">
+                    <div class="intro-card reveal">
+                        <span class="icon-wrap"><i class="fa-solid fa-location-dot"></i></span>
+                        <h2>Ubicación</h2>
+                        <p>Cesar Vallejo 212, Paucarpata, Arequipa 04006.</p>
+                    </div>
+                    <div class="intro-card reveal delay-1">
+                        <span class="icon-wrap"><i class="fa-solid fa-phone"></i></span>
+                        <h2>Contacto directo</h2>
+                        <p><a href="tel:+51929503883">929 503 883</a></p>
+                    </div>
+                    <div class="intro-card reveal delay-2">
+                        <span class="icon-wrap"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <h2>Formación</h2>
+                        <p>Capacitación y certificación para nuevos talentos y profesionales.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding services-section" id="servicios">
+                <div class="container">
+                    <div class="section-head reveal">
+                        <p class="eyebrow">Servicios destacados</p>
+                        <h2>Tratamientos y soluciones para tu bienestar</h2>
+                        <p>Una propuesta inspirada en páginas modernas de estética, con enfoque comercial claro, visual elegante y navegación rápida.</p>
+                    </div>
+
+                    <div class="services-grid">
+                        <article class="service-card reveal">
+                            <span class="service-icon"><i class="fa-solid fa-spa"></i></span>
+                            <h3>Rostro y piel</h3>
+                            <p>Limpieza facial, hidratación, cuidado especializado y protocolos pensados para mejorar la apariencia de la piel.</p>
+                        </article>
+
+                        <article class="service-card reveal delay-1">
+                            <span class="service-icon"><i class="fa-solid fa-hand-sparkles"></i></span>
+                            <h3>Cuidado corporal</h3>
+                            <p>Sesiones enfocadas en bienestar, relajación, modelado estético y cuidado personal integral.</p>
+                        </article>
+
+                        <article class="service-card reveal delay-2">
+                            <span class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            <h3>Realce de imagen</h3>
+                            <p>Servicios para resaltar tu estilo, recuperar confianza y mantener una imagen impecable.</p>
+                        </article>
+
+                        <article class="service-card reveal">
+                            <span class="service-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                            <h3>Educación</h3>
+                            <p>Programas diseñados para personas que quieren aprender desde cero o actualizar conocimientos.</p>
+                        </article>
+
+                        <article class="service-card reveal delay-1">
+                            <span class="service-icon"><i class="fa-solid fa-certificate"></i></span>
+                            <h3>Certificación</h3>
+                            <p>Formación con orientación profesional para fortalecer el perfil de quienes trabajan en belleza.</p>
+                        </article>
+
+                        <article class="service-card reveal delay-2">
+                            <span class="service-icon"><i class="fa-solid fa-comments"></i></span>
+                            <h3>Asesoría personalizada</h3>
+                            <p>Acompañamiento para elegir el tratamiento o la ruta de aprendizaje que mejor se adapte a tu objetivo.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding about-section" id="formacion">
+                <div class="container about-grid">
+                    <div class="about-media reveal">
+                        <div class="media-frame large tall">
+                            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80" alt="Formación en estética de ZELIT" />
+                        </div>
+                    </div>
+                    <div class="about-copy reveal delay-1">
+                        <p class="eyebrow">Por qué elegir ZELIT</p>
+                        <h2>Un centro que combina servicio, imagen y aprendizaje.</h2>
+                        <p>
+                            Aquí no solo encuentras atención estética: también una experiencia pensada para proyectar confianza, profesionalismo y resultados visibles.
+                        </p>
+                        <p>
+                            Si deseas iniciar en el rubro de la belleza o reforzar tu trayectoria, la propuesta educativa te permite crecer con base práctica y enfoque actualizado.
+                        </p>
+
+                        <div class="feature-list">
+                            <div><i class="fa-solid fa-circle-check"></i> Atención personalizada</div>
+                            <div><i class="fa-solid fa-circle-check"></i> Formación y certificación</div>
+                            <div><i class="fa-solid fa-circle-check"></i> Ambiente moderno y acogedor</div>
+                        </div>
+
+                        <a class="btn btn-primary" href="#contacto">Quiero más información</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding gallery-section" id="galeria">
+                <div class="container">
+                    <div class="section-head reveal">
+                        <p class="eyebrow">Galería</p>
+                        <h2>Espacio listo para tus fotos</h2>
+                        <p>Ya quedó conectada una carpeta de imágenes para que reemplaces los archivos y la página las muestre automáticamente.</p>
+                    </div>
+
+                    <div class="gallery-grid">
+                        <figure class="gallery-card reveal">
+                            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80" alt="Ambiente del centro" />
+                        </figure>
+                        <figure class="gallery-card reveal delay-1">
+                            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1200&q=80" alt="Servicio de estética" />
+                        </figure>
+                        <figure class="gallery-card reveal delay-2">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80" alt="Capacitación y formación" />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding contact-section" id="contacto">
+                <div class="container contact-grid">
+                    <div class="contact-copy reveal">
+                        <p class="eyebrow">Contacto</p>
+                        <h2>Estamos en Arequipa y atendemos de lunes a sábado.</h2>
+
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                <div>
+                                    <strong>Dirección</strong>
+                                    <p>Cesar Vallejo 212 Paucarpata, Arequipa 04006</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+                                <div>
+                                    <strong>Celular</strong>
+                                    <p><a href="tel:+51929503883">929 503 883</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                                <div>
+                                    <strong>WhatsApp</strong>
+                                    <p><a href="https://wa.me/51929503883" target="_blank" rel="noreferrer">Escríbenos para reservar</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hours-card">
+                            <h3>Horario</h3>
+                            <p><strong>Lunes a sábado:</strong> 9:00 am - 7:00 pm</p>
+                            <p><strong>Domingo:</strong> Cerrado</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-map reveal delay-1">
+                        <iframe
+                            title="Mapa de ZELIT"
+                            src="https://www.google.com/maps?q=Cesar%20Vallejo%20212%20Paucarpata%20Arequipa%2004006&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding cta-section">
+                <div class="container cta-box reveal">
+                    <p class="eyebrow">Agenda hoy</p>
+                    <h2>Tu imagen y tu formación empiezan con una conversación.</h2>
+                    <p>Escríbenos por WhatsApp y te orientamos sobre tratamientos, servicios o programas de capacitación.</p>
+                    <a class="btn btn-primary btn-light" href="https://wa.me/51929503883" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Contactar ahora
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <div>
+                    <strong>ZELIT - Centro de estética</strong>
+                    <p>Tratamientos de belleza, cuidado personal y formación profesional en Arequipa.</p>
+                </div>
+                <div>
+                    <strong>Horario</strong>
+                    <p>Lunes a sábado: 9:00 am - 7:00 pm</p>
+                    <p>Domingo: Cerrado</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#servicios">Servicios</a>
+                    <a href="#formacion">Formación</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
             </div>
+        </footer>
 
-            <div class="info-box">
-                <h2>Ubicación</h2>
-                <p>Cesar Vallejo 212, Paucarpata</p>
-                <p>Arequipa 04006, Perú</p>
-            </div>
+        <a class="whatsapp-float" href="https://wa.me/51929503883" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
 
-            <div class="info-box">
-                <h2>Contacto Directo</h2>
-                <p><strong>Celular:</strong> +51 929 503 883</p>
-                <p>Haz clic en el botón de arriba para escribirnos directamente por WhatsApp.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 ZELIT - Centro de Estética. Todos los derechos reservados.</p>
-    </footer>
-
+    <script src="script.js" defer></script>
 </body>
 </html>
