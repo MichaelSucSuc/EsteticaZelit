@@ -2,30 +2,34 @@
 
 :root {
     /* Color Palette */
-    --bg-base: #FAF9F6;       /* Alabaster/Champagne Warm White */
-    --bg-secondary: #F4EFEA;  /* Soft Cashmere Cream */
-    --bg-tertiary: #EAE2D8;   /* Muted Sand */
-    --primary: #0F2C26;       /* Deep Emerald Green (Authority, clinical trust) */
-    --primary-light: #1A443C; /* Shimmer Emerald */
-    --accent: #C19A6B;        /* Elegant Metallic Gold (Luxe, premium feel) */
-    --accent-hover: #A98357;  /* Deep Gold */
-    --accent-soft: rgba(193, 154, 107, 0.15);
-    --rose-gold: #E0B1A3;     /* Warm highlight blush */
+    --bg-base: #FAF8F8;       /* Blanco Cálido Rosado (BG_LIGHT) */
+    --bg-secondary: #F2EAEB;  /* Tono ligeramente más oscuro (Cashmere Cream Rose) */
+    --bg-tertiary: #E5DCDD;   /* Muted Sand Rose */
+    --bg-dark: #1E1416;       /* Borgoña Negro Profundo / Warm Espresso (BG_DARK) */
+    
+    --primary: #C37688;       /* Rosa Viejo / Oro Rosa del logo (PRIMARY_COLOR) */
+    --primary-light: #A95A6D; /* Hover de botones primarios (oscurecido 15%) */
+    --secondary: #2D1E22;     /* Borgoña Carbón Profundo (SECONDARY_COLOR) */
+    
+    --accent: #C37688;        /* Acentos de color (PRIMARY_COLOR) */
+    --accent-hover: #A95A6D;  /* Hover de acentos */
+    --accent-soft: rgba(195, 118, 136, 0.15);
+    --rose-gold: #E5B6C0;     /* Color de contraste oro rosa */
     
     /* Text Colors */
-    --text-dark: #1A1D1C;     /* Obsidian Charcoal */
-    --text-muted: #5A6662;    /* Warm Slate Gray */
-    --text-light: #FAF9F6;    /* Off-white */
+    --text-dark: #2D1E22;     /* Texto oscuro principal */
+    --text-muted: #5A4E50;    /* Párrafos y descripciones generales (TEXT_MAIN) */
+    --text-light: #FAF8F8;    /* Texto claro en fondos oscuros */
 
     /* Glassmorphism & Borders */
-    --glass-bg: rgba(250, 249, 246, 0.75);
-    --glass-border: rgba(193, 154, 107, 0.18);
-    --line: rgba(26, 29, 28, 0.08);
+    --glass-bg: rgba(250, 248, 248, 0.75);
+    --glass-border: rgba(195, 118, 136, 0.18);
+    --line: rgba(45, 30, 34, 0.08);
 
     /* Shadows */
-    --shadow-soft: 0 10px 30px -10px rgba(15, 44, 38, 0.06);
-    --shadow-premium: 0 20px 50px -15px rgba(15, 44, 38, 0.09);
-    --shadow-hover: 0 30px 60px -10px rgba(15, 44, 38, 0.15);
+    --shadow-soft: 0 10px 30px -10px rgba(45, 30, 34, 0.06);
+    --shadow-premium: 0 20px 50px -15px rgba(45, 30, 34, 0.09);
+    --shadow-hover: 0 30px 60px -10px rgba(45, 30, 34, 0.15);
     
     /* Radius */
     --radius-sm: 8px;
@@ -56,8 +60,8 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-base);
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(15, 44, 38, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 10% 20%, rgba(195, 118, 136, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(45, 30, 34, 0.03) 0%, transparent 50%);
     background-attachment: fixed;
     line-height: 1.7;
     overflow-x: hidden;
@@ -67,7 +71,7 @@ body {
 /* Typography */
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
-    color: var(--primary);
+    color: var(--secondary);
     font-weight: 600;
     line-height: 1.15;
     letter-spacing: -0.01em;
@@ -179,13 +183,13 @@ img {
 .btn-primary {
     background-color: var(--primary);
     color: var(--text-light);
-    box-shadow: 0 10px 25px rgba(15, 44, 38, 0.15);
+    box-shadow: 0 10px 25px rgba(195, 118, 136, 0.15);
 }
 
 .btn-primary:hover {
     background-color: var(--primary-light);
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(15, 44, 38, 0.25);
+    box-shadow: 0 15px 30px rgba(195, 118, 136, 0.25);
 }
 
 .btn-secondary {
@@ -195,7 +199,7 @@ img {
 }
 
 .btn-secondary:hover {
-    background-color: rgba(15, 44, 38, 0.04);
+    background-color: rgba(195, 118, 136, 0.05);
     transform: translateY(-3px);
 }
 
@@ -214,13 +218,13 @@ img {
 .btn-gold {
     background-color: var(--accent);
     color: var(--text-light);
-    box-shadow: 0 10px 25px rgba(193, 154, 107, 0.2);
+    box-shadow: 0 10px 25px rgba(195, 118, 136, 0.2);
 }
 
 .btn-gold:hover {
     background-color: var(--accent-hover);
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(193, 154, 107, 0.3);
+    box-shadow: 0 15px 30px rgba(195, 118, 136, 0.3);
 }
 
 /* Site Header */
@@ -228,14 +232,14 @@ img {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: rgba(250, 249, 246, 0.85);
+    background-color: rgba(250, 248, 248, 0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid transparent;
     transition: var(--transition);
 }
 
 .site-header.is-scrolled {
-    background-color: rgba(250, 249, 246, 0.92);
+    background-color: rgba(250, 248, 248, 0.92);
     border-color: var(--line);
     box-shadow: var(--shadow-soft);
 }
@@ -263,8 +267,8 @@ img {
     height: 48px;
     border-radius: 14px;
     object-fit: cover;
-    box-shadow: 0 8px 20px rgba(15, 44, 38, 0.15);
-    border: 1px solid rgba(193, 154, 107, 0.3);
+    box-shadow: 0 8px 20px rgba(45, 30, 34, 0.15);
+    border: 1px solid rgba(195, 118, 136, 0.3);
 }
 
 .brand-text {
@@ -276,7 +280,7 @@ img {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--secondary);
     letter-spacing: 0.05em;
     line-height: 1;
 }
@@ -331,13 +335,13 @@ img {
     color: var(--text-light);
     background-color: var(--primary);
     border-radius: var(--radius-round);
-    box-shadow: 0 8px 20px rgba(15, 44, 38, 0.1);
+    box-shadow: 0 8px 20px rgba(195, 118, 136, 0.1);
 }
 
 .nav-cta:hover {
     background-color: var(--accent);
     transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(193, 154, 107, 0.2);
+    box-shadow: 0 12px 25px rgba(195, 118, 136, 0.2);
 }
 
 .menu-toggle {
@@ -485,7 +489,7 @@ img {
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(193, 154, 107, 0.15) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(195, 118, 136, 0.15) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -509,7 +513,7 @@ img {
 
 .accent-badge-card p {
     font-size: 0.82rem;
-    color: rgba(250, 249, 246, 0.75);
+    color: rgba(250, 248, 248, 0.75);
     line-height: 1.4;
 }
 
@@ -547,8 +551,8 @@ img {
     width: 56px;
     height: 56px;
     border-radius: var(--radius-md);
-    background-color: rgba(193, 154, 107, 0.12);
-    border: 1px solid rgba(193, 154, 107, 0.25);
+    background-color: rgba(195, 118, 136, 0.12);
+    border: 1px solid rgba(195, 118, 136, 0.25);
     display: grid;
     place-items: center;
     color: var(--primary);
@@ -571,7 +575,9 @@ img {
 }
 
 /* Services Section (Tabs) */
-.services-section {
+.services-section,
+.contact-section {
+    background-color: var(--bg-secondary);
     position: relative;
 }
 
@@ -674,7 +680,7 @@ img {
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
-    border-color: rgba(193, 154, 107, 0.25);
+    border-color: rgba(195, 118, 136, 0.25);
 }
 
 .service-card:hover::before {
@@ -710,7 +716,7 @@ img {
 
 /* Academy & Education Banner (About section) */
 .about-section {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-base);
     position: relative;
 }
 
@@ -826,7 +832,7 @@ img {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(15, 44, 38, 0.8) 100%);
+    background: linear-gradient(180deg, transparent 40%, rgba(45, 30, 34, 0.8) 100%);
     opacity: 0;
     transition: var(--transition);
 }
@@ -1027,7 +1033,7 @@ img {
 
 /* Call To Action Box (Luxurious emerald design) */
 .cta-box {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary) 100%);
     border-radius: var(--radius-xl);
     padding: 80px 40px;
     text-align: center;
@@ -1042,8 +1048,8 @@ img {
     position: absolute;
     inset: 0;
     background-image: 
-        radial-gradient(circle at 10% 10%, rgba(193, 154, 107, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(224, 177, 163, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 10% 10%, rgba(195, 118, 136, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(229, 182, 192, 0.08) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -1065,7 +1071,7 @@ img {
 }
 
 .cta-box p {
-    color: rgba(250, 249, 246, 0.8);
+    color: rgba(250, 248, 248, 0.8);
     font-size: 1.1rem;
     max-width: 600px;
     margin-inline: auto;
@@ -1074,7 +1080,7 @@ img {
 
 /* Site Footer */
 .site-footer {
-    background-color: var(--primary);
+    background-color: var(--bg-dark);
     color: var(--text-light);
     padding: 80px 0 40px;
     border-top: 1px solid var(--accent-soft);
@@ -1099,7 +1105,7 @@ img {
 }
 
 .footer-brand p {
-    color: rgba(250, 249, 246, 0.65);
+    color: rgba(250, 248, 248, 0.65);
     font-size: 0.92rem;
     max-width: 320px;
 }
@@ -1126,7 +1132,7 @@ img {
 }
 
 .footer-nav-links a {
-    color: rgba(250, 249, 246, 0.75);
+    color: rgba(250, 248, 248, 0.75);
     font-size: 0.95rem;
 }
 
@@ -1136,13 +1142,13 @@ img {
 }
 
 .footer-hours p {
-    color: rgba(250, 249, 246, 0.75);
+    color: rgba(250, 248, 248, 0.75);
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(250, 249, 246, 0.08);
+    border-top: 1px solid rgba(250, 248, 248, 0.08);
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
@@ -1153,7 +1159,7 @@ img {
 
 .footer-bottom p {
     font-size: 0.85rem;
-    color: rgba(250, 249, 246, 0.45);
+    color: rgba(250, 248, 248, 0.45);
 }
 
 /* Floating WhatsApp Badge */
