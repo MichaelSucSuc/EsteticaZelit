@@ -141,7 +141,128 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll.observe(item);
     });
 
-    // 4. Header Scroll styling
+    // 4. Video Lightbox & Carousel Lógica
+    const videoLightbox = document.getElementById('videoLightbox');
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxVideo = document.getElementById('lightboxVideo');
+    
+    const playButtons = document.querySelectorAll('.video-play-btn');
+    const storyBubbles = document.querySelectorAll('.story-bubble');
+
+    const openVideo = (videoSrc, videoTitle) => {
+        if (!videoLightbox || !lightboxVideo || !lightboxTitle) return;
+        
+        lightboxVideo.src = videoSrc;
+        lightboxTitle.textContent = videoTitle;
+        videoLightbox.classList.add('active');
+        videoLightbox.setAttribute('aria-hidden', 'false');
+        
+        // Reset dynamic visual states
+        lightboxVideo.load();
+        
+        // Play after load
+        lightboxVideo.play().catch(err => {
+            console.log("Autoplay blocked or playback error:", err);
+        });
+    };
+
+    const closeVideo = () => {
+        if (!videoLightbox || !lightboxVideo) return;
+        
+        lightboxVideo.pause();
+        // Clear src to stop downloading binary stream
+        lightboxVideo.src = '';
+        videoLightbox.classList.remove('active');
+        videoLightbox.setAttribute('aria-hidden', 'true');
+    };
+
+    // Bind triggers for Carousel cards
+    playButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const videoSrc = btn.getAttribute('data-video');
+            const videoTitle = btn.getAttribute('data-title') || 'Video de Tratamiento';
+            openVideo(videoSrc, videoTitle);
+        });
+    });
+
+    // Bind triggers for Floating Stories
+    storyBubbles.forEach(bubble => {
+        bubble.addEventListener('click', () => {
+            const videoSrc = bubble.getAttribute('data-video');
+            const videoTitle = bubble.getAttribute('data-title') || 'Video de Tratamiento';
+            openVideo(videoSrc, videoTitle);
+        });
+    });
+
+    // Close handlers
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeVideo);
+    }
+    if (lightboxOverlay) {
+        lightboxOverlay.addEventListener('click', closeVideo);
+    }
+
+    // Keyboard ESC to close lightbox
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && videoLightbox && videoLightbox.classList.contains('active')) {
+            closeVideo();
+        }
+    });
+
+    // Carousel Slider scroll logic
+    const videoCarouselTrack = document.getElementById('videoCarouselTrack');
+    const carouselPrev = document.getElementById('carouselPrev');
+    const carouselNext = document.getElementById('carouselNext');
+
+    if (videoCarouselTrack && carouselPrev && carouselNext) {
+        carouselPrev.addEventListener('click', () => {
+            const cardWidth = videoCarouselTrack.querySelector('.video-card')?.offsetWidth || videoCarouselTrack.offsetWidth;
+            videoCarouselTrack.scrollBy({
+                left: -cardWidth - 24, // width + gap
+                behavior: 'smooth'
+            });
+        });
+
+        carouselNext.addEventListener('click', () => {
+            const cardWidth = videoCarouselTrack.querySelector('.video-card')?.offsetWidth || videoCarouselTrack.offsetWidth;
+            videoCarouselTrack.scrollBy({
+                left: cardWidth + 24, // width + gap
+                behavior: 'smooth'
+            });
+        });
+        
+        // Dynamic disable/enable scroll buttons depending on positions
+        const updateCarouselArrows = () => {
+            const scrollLeft = videoCarouselTrack.scrollLeft;
+            const maxScroll = videoCarouselTrack.scrollWidth - videoCarouselTrack.clientWidth;
+            
+            // Allow small buffer (2px)
+            if (scrollLeft <= 5) {
+                carouselPrev.style.opacity = '0.5';
+                carouselPrev.style.pointerEvents = 'none';
+            } else {
+                carouselPrev.style.opacity = '1';
+                carouselPrev.style.pointerEvents = 'auto';
+            }
+            
+            if (scrollLeft >= maxScroll - 5) {
+                carouselNext.style.opacity = '0.5';
+                carouselNext.style.pointerEvents = 'none';
+            } else {
+                carouselNext.style.opacity = '1';
+                carouselNext.style.pointerEvents = 'auto';
+            }
+        };
+        
+        videoCarouselTrack.addEventListener('scroll', updateCarouselArrows);
+        // Initial call
+        setTimeout(updateCarouselArrows, 100);
+        window.addEventListener('resize', updateCarouselArrows);
+    }
+
+    // 5. Header Scroll styling
     const handleScroll = () => {
         if (!siteHeader) return;
         if (window.scrollY > 40) {
