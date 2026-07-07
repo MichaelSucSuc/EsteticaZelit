@@ -23,28 +23,6 @@
 </head>
 <body>
     <div class="page-shell">
-        <!-- Floating Stories Widget (On left side of screen) -->
-        <div class="stories-sidebar" id="storiesSidebar">
-            <button class="story-bubble" data-video="assets/videos/Como Saber si Necesitas una Blefaroplastia.mp4" data-title="¿Cómo Saber si Necesitas una Blefaroplastia?" aria-label="Ver video de Blefaroplastia">
-                <div class="story-img-wrap">
-                    <img src="assets/images/Posters/poster_blefaroplastia.png" alt="Blefaroplastia" />
-                </div>
-                <span class="story-label">Blefaro</span>
-            </button>
-            <button class="story-bubble" data-video="assets/videos/Rejuvenecimiento facial sin Cirugia.mp4" data-title="Rejuvenecimiento Facial sin Cirugía" aria-label="Ver video de Rejuvenecimiento facial">
-                <div class="story-img-wrap">
-                    <img src="assets/images/Posters/poster_rejuvenecimiento.png" alt="Rejuvenecimiento" />
-                </div>
-                <span class="story-label">Rejuvenece</span>
-            </button>
-            <button class="story-bubble" data-video="assets/videos/Tratamientos rejuvenecedores.mp4" data-title="Nuestros Tratamientos Rejuvenecedores" aria-label="Ver video de Tratamientos Zelit">
-                <div class="story-img-wrap">
-                    <img src="assets/images/Posters/poster_tratamientos.png" alt="Tratamientos" />
-                </div>
-                <span class="story-label">Zelit TV</span>
-            </button>
-        </div>
-
         <!-- Site Header -->
         <header class="site-header" id="siteHeader">
             <div class="container nav-bar">
@@ -241,6 +219,58 @@
                 </div>
             </section>
 
+            <!-- Featured Treatment Spotlight (Plasma) -->
+            <section class="section-padding featured-treatment-section" id="destacado-plasma">
+                <div class="container featured-plasma-grid">
+                    <div class="featured-plasma-media reveal">
+                        <div class="video-square-card">
+                            <video src="assets/videos/Rejuvenecimiento facial sin Cirugia.mp4" 
+                                   controls 
+                                   playsinline 
+                                   preload="metadata" 
+                                   class="square-video-player"
+                                   aria-label="Video de tratamiento de Plasma con Células Madre de Zelit"></video>
+                        </div>
+                    </div>
+                    <div class="featured-plasma-copy reveal delay-1">
+                        <span class="eyebrow">Tratamiento Destacado</span>
+                        <h2>Plasma con Células Madre</h2>
+                        <p class="lead">
+                            Un tratamiento rejuvenecedor no quirúrgico de alta gama diseñado para restaurar la salud, firmeza y luminosidad natural de tu rostro.
+                        </p>
+                        <div class="plasma-highlights">
+                            <div class="plasma-highlight-item">
+                                <span class="plasma-highlight-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                                <div class="plasma-highlight-info">
+                                    <h4>Tratamiento de Melasma</h4>
+                                    <p>Regenera las capas profundas de la piel para atenuar manchas e hiperpigmentación de forma progresiva.</p>
+                                </div>
+                            </div>
+                            <div class="plasma-highlight-item">
+                                <span class="plasma-highlight-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                                <div class="plasma-highlight-info">
+                                    <h4>Control y Secuelas de Acné</h4>
+                                    <p>Estimula la producción natural de colágeno, ayudando a suavizar marcas y regenerar la textura del cutis.</p>
+                                </div>
+                            </div>
+                            <div class="plasma-highlight-item">
+                                <span class="plasma-highlight-icon"><i class="fa-solid fa-sun"></i></span>
+                                <div class="plasma-highlight-info">
+                                    <h4>Aclarar e Iluminar la Piel</h4>
+                                    <p>Devuelve el tono uniforme y la vitalidad a pieles apagadas mediante bioestimulación cutánea profunda.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plasma-cta">
+                            <a class="btn btn-primary" href="https://wa.me/51929503883" target="_blank" rel="noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Reservar Tratamiento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Academy / About Section (Minimal) -->
             <section class="section-padding about-section" id="formacion">
                 <div class="container about-grid">
@@ -408,66 +438,14 @@
                         </div>
                     </div>
 
-                    <div class="videos-carousel-column reveal delay-1">
-                        <div class="carousel-container">
-                            <div class="carousel-track" id="videoCarouselTrack">
-                                
-                                <!-- Video Card 1 -->
-                                <div class="video-card">
-                                    <div class="video-thumbnail-wrap">
-                                        <img src="assets/images/Posters/poster_blefaroplastia.png" alt="Miniatura Blefaroplastia" class="video-thumbnail" />
-                                        <button class="video-play-btn" data-video="assets/videos/Como Saber si Necesitas una Blefaroplastia.mp4" data-title="¿Cómo Saber si Necesitas una Blefaroplastia?" aria-label="Reproducir video de Blefaroplastia">
-                                            <i class="fa-solid fa-play"></i>
-                                        </button>
-                                        <span class="video-tag">Blefaroplastia</span>
-                                    </div>
-                                    <div class="video-card-info">
-                                        <h3>¿Necesitas Blefaroplastia?</h3>
-                                        <p>Descubre si eres candidato/a para este procedimiento de rejuvenecimiento de mirada.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Video Card 2 -->
-                                <div class="video-card">
-                                    <div class="video-thumbnail-wrap">
-                                        <img src="assets/images/Posters/poster_rejuvenecimiento.png" alt="Miniatura Rejuvenecimiento Facial" class="video-thumbnail" />
-                                        <button class="video-play-btn" data-video="assets/videos/Rejuvenecimiento facial sin Cirugia.mp4" data-title="Rejuvenecimiento Facial sin Cirugía" aria-label="Reproducir video de Rejuvenecimiento Facial">
-                                            <i class="fa-solid fa-play"></i>
-                                        </button>
-                                        <span class="video-tag">Rejuvenecimiento</span>
-                                    </div>
-                                    <div class="video-card-info">
-                                        <h3>Rejuvenecimiento sin Cirugía</h3>
-                                        <p>Técnicas avanzadas no invasivas para devolverle frescura y vitalidad a tu piel.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Video Card 3 -->
-                                <div class="video-card">
-                                    <div class="video-thumbnail-wrap">
-                                        <img src="assets/images/Posters/poster_tratamientos.png" alt="Miniatura Tratamientos Rejuvenecedores" class="video-thumbnail" />
-                                        <button class="video-play-btn" data-video="assets/videos/Tratamientos rejuvenecedores.mp4" data-title="Nuestros Tratamientos Rejuvenecedores" aria-label="Reproducir video de Tratamientos Rejuvenecedores">
-                                            <i class="fa-solid fa-play"></i>
-                                        </button>
-                                        <span class="video-tag">Zelit TV</span>
-                                    </div>
-                                    <div class="video-card-info">
-                                        <h3>Tratamientos Exclusivos ZELIT</h3>
-                                        <p>Conoce nuestras cabinas de atención y los tratamientos corporales y faciales premium.</p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Navigation Controls -->
-                            <div class="carousel-controls">
-                                <button class="carousel-control-btn prev" id="carouselPrev" aria-label="Video anterior">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </button>
-                                <button class="carousel-control-btn next" id="carouselNext" aria-label="Siguiente video">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </button>
-                            </div>
+                    <div class="videos-video-column reveal delay-1">
+                        <div class="video-vertical-card">
+                            <video src="assets/videos/Tratamientos rejuvenecedores.mp4" 
+                                   controls 
+                                   playsinline 
+                                   preload="metadata" 
+                                   class="vertical-video-player"
+                                   aria-label="Video demostrativo de tratamientos rejuvenecedores de Zelit"></video>
                         </div>
                     </div>
                 </div>
@@ -727,20 +705,6 @@
                 <p>Desarrollado con elegancia y profesionalismo.</p>
             </div>
         </footer>
-
-        <!-- Video Lightbox Modal -->
-        <div class="video-lightbox" id="videoLightbox" aria-hidden="true" role="dialog">
-            <div class="lightbox-overlay" id="lightboxOverlay"></div>
-            <div class="lightbox-content">
-                <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar video">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <h3 class="lightbox-title" id="lightboxTitle">Título del Video</h3>
-                <div class="lightbox-video-container">
-                    <video id="lightboxVideo" controls controlsList="nodownload" playsinline preload="none"></video>
-                </div>
-            </div>
-        </div>
 
         <!-- Floating WhatsApp Widget -->
         <a class="whatsapp-float" href="https://wa.me/51929503883" target="_blank" rel="noreferrer"
