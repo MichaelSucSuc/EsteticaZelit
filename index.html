@@ -223,13 +223,36 @@
             <section class="section-padding featured-treatment-section" id="destacado-plasma">
                 <div class="container featured-plasma-grid">
                     <div class="featured-plasma-media reveal">
-                        <div class="video-square-card">
-                            <video src="assets/videos/Rejuvenecimiento facial sin Cirugia.mp4" 
-                                   controls 
-                                   playsinline 
-                                   preload="metadata" 
-                                   class="square-video-player"
-                                   aria-label="Video de tratamiento de Plasma con Células Madre de Zelit"></video>
+                        <div class="video-carousel">
+                            <div class="carousel-slides">
+                                <!-- Slide 0: Rejuvenecimiento Facial (Activo por defecto - Cuadrado) -->
+                                <div class="carousel-slide active" data-slide="0">
+                                    <div class="video-square-card">
+                                        <video src="assets/videos/Rejuvenecimiento facial sin Cirugia.mp4" 
+                                               controls 
+                                               playsinline 
+                                               preload="metadata" 
+                                               class="square-video-player"
+                                               aria-label="Video de Rejuvenecimiento Facial sin Cirugía de Zelit"></video>
+                                    </div>
+                                </div>
+                                <!-- Slide 1: Plasma con Células Madre (Oculto - Vertical) -->
+                                <div class="carousel-slide" data-slide="1">
+                                    <div class="video-vertical-card">
+                                        <video src="assets/videos/PlasmaConCelulasMadre2.mp4" 
+                                               controls 
+                                               playsinline 
+                                               preload="metadata" 
+                                               class="vertical-video-player"
+                                               aria-label="Video de Plasma con Células Madre de Zelit"></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Controles del carrusel -->
+                            <div class="carousel-nav">
+                                <button class="carousel-nav-btn active" data-go="0">Rejuvenecimiento Sin Cirugía</button>
+                                <button class="carousel-nav-btn" data-go="1">Así se ve Hacerse Plasma</button>
+                            </div>
                         </div>
                     </div>
                     <div class="featured-plasma-copy reveal delay-1">

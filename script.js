@@ -152,6 +152,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // 6. Video Carousel Logic
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const carouselNavBtns = document.querySelectorAll('.carousel-nav-btn');
+
+    if (carouselSlides.length > 0 && carouselNavBtns.length > 0) {
+        carouselNavBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetIndex = btn.getAttribute('data-go');
+
+                // Toggle active button
+                carouselNavBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Toggle active slide & pause hidden videos
+                carouselSlides.forEach(slide => {
+                    const video = slide.querySelector('video');
+                    if (slide.getAttribute('data-slide') === targetIndex) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                        if (video) {
+                            video.pause();
+                        }
+                    }
+                });
+            });
+        });
+    }
+
     window.addEventListener('scroll', handleScroll);
     // Initial check on load
     handleScroll();
